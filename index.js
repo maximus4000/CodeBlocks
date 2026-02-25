@@ -31,16 +31,4 @@ let draggedElement = null;
             }
         }
     });
-                    
-
-document.getElementById('run-btn').addEventListener('click', async () => {
-    try {
-        Memory.reset();
-        const program = Interpreter.parseBlocks(document.getElementById('workspace'));
-        await Interpreter.run(program);
-        console.log("Результат выполнения:", Memory.variables);
-        alert("Успешно! Состояние памяти: " + JSON.stringify(Memory.variables));
-    } catch (e) {
-        alert("Ошибка: " + e.message);
-    }
-});
+            
